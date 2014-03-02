@@ -1,0 +1,227 @@
+
+\section{Order of Operations}
+
+In this lesson, we will learn the order of operations -- Parentheses, Exponent, Multiplication, Division, Addition, Subtraction.
+
+\subsection{MD and AS}
+
+Most likely, you remember from middle school the acronym PEMDAS (Please Excuse My Dear Aunt Sally). In order of operations, we should follow the order Parentheses, Exponent, Multiplication, Division, Addition, Subtraction. There is a better way to write this acronym:
+
+\[
+\begin{aligned}[t]
+   &P &\text{(Parentheses)} \\
+   &E &\text{(Exponent)} \\
+   &MD &\text{(Multiplication and Division)} \\
+   &AS &\text{(Addition and Subtraction)}
+\end{aligned}
+\]
+\captionof{figure}{Order of Operations}
+\label{fig:PEMDAS18}
+
+What's the difference? If we simply write PEMDAS, we could wrongly assume that multiplication overrides division, and that addition overrides subtraction. This is not true.
+
+Addition and subtraction are at the same level of order of operations. They cannot override each other. We do the operation which comes first (on the left). Compare the following two examples:
+
+\begin{myexample}
+\begin{tabular}[t]{c@{\hspace{4cm}}c@{\hspace{2cm}}c}
+&
+$ \begin{aligned}[t] &\phantom{{}=} \underline{4+3}-1 \\ &= 7 \phantom{+3} -1 \\ &= 6 \end{aligned} $ 
+&
+$ \begin{aligned}[t] &\phantom{{}=} \underline{4-3}+1 \\ &= 1 \phantom{-3} +1 \\ &= 2 \end{aligned} $
+\end{tabular}
+\end{myexample}
+
+It's a good practice to underline the next step, like in the examples above. Note the problem will not come with underlines. You have add them in yourself.
+
+In the example on the right side, we did subtraction first because subtraction came first (on the left). Addition cannot override subtraction, because they are at the same level in the order of operations. This is why we should not write PEMDAS horizontally, and should instead write it vertically as in \cref{fig:PEMDAS18}.
+
+Similarly, multiplication and division cannot override each other. Look at the next two examples.
+
+%\begin{myexample}
+% $ 
+%\begin{aligned}[t] 
+%\underline{12\cdot3}\div4 &= 36 \phantom{11} & \underline{12\cdot3}\div4 &= 36 \phantom{11} \\ 
+%&= 9  &= 9  
+%\end{aligned} $ 
+%\end{myexample}
+
+\begin{myexample}	
+\begin{tabular}[t]{c@{\hspace{4cm}}c@{\hspace{2cm}}c}
+&
+ $ 
+\begin{aligned}[t] 
+   &\phantom{{}=} \underline{12\cdot3}\div4 \\
+   &= 36 \phantom{11} \div 4\\ 
+   &= 9  
+\end{aligned} $ 
+&
+ $ 
+\begin{aligned}[t] 
+   &\phantom{{}=} \underline{12\div3}\cdot4 \\
+   &= 4 \phantom{|111} \cdot 4\\ 
+   &= 16  
+\end{aligned} $ 
+\end{tabular}
+\end{myexample}
+
+In the example on the right side, we did division first because it came before multiplication.
+
+\subsection{Basic Order of Operations}
+
+
+The next few examples show how to follow the order of operations as in  \cref{fig:PEMDAS18}.
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+    &\phantom{{}=} 10-\underline{2\cdot3}    \\
+    &= 10-6 \\
+   &= 4
+\end{aligned}
+\]
+
+In the example above, multiplication overrides subtraction, so we did $2\cdot3$ first.
+\end{myexample}
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=} \underline{(10-2)}\cdot3 \\
+   &= 8\cdot3 \\
+   &= 24
+\end{aligned}
+\]
+In the example above, parentheses override multiplication, so we did $10-2$ first.
+\end{myexample}
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=} 3\cdot \underline{2^{3}} \\
+   &= 3\cdot 8 \\
+   &= 24
+\end{aligned}
+\]
+In the example above, exponent overrides multiplication, so we did $2^{3}$ first. Note that $2^{3}=2\cdot2\cdot2=4\cdot2=8$. It's a common mistake to do $2^{3}=6$.
+\end{myexample}
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=} \underline{(3\cdot2)}^{3} \\
+   &= 6^{3} \\
+   &= 6\cdot6\cdot6 \\
+   &= 216
+\end{aligned}
+\]
+In the example above, parentheses override exponent, so we did $3\cdot2$ first.
+\end{myexample}
+
+
+\subsection{Implied Multiplication}
+
+Earlier, we learned that we don't use the multiplication symbol any more. We use a dot instead. For example, instead of writing $2\times3=6$, we write $2\cdot3=6$.
+
+Mathematicians decide to write less whenever possible. Sometimes, even the dot can be omitted. For example, instead of writing $2\cdot(3+4)$, we write $2(3+4)$.
+
+So, in many situations, if there is no operation symbol ($+,-,\cdot,\div$), it implies multiplication. For example:
+
+\[
+\begin{aligned}[t]
+   & 2(3)=2\cdot3=6 \\
+   & 2x \text{ implies } 2\cdot x \\
+   & 2(3-1)=2\cdot2=4
+\end{aligned}
+\]
+
+Note that if you want to write $2\cdot3$, you have to write the multiplication symbol (the dot). Otherwise it becomes twenty-three. So, you can only omit the multiplication symbol when there won't be any confusions.
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=} \underline{(7-2)}4 \\
+   &= (5)4 \\
+   &= 20
+\end{aligned}
+\]
+In the example above, there is no operation symbol between $(7-2)$ and $4$, which implies multiplication.
+
+Since parentheses override multiplication, we did $(7-2)$ first.
+\end{myexample}
+
+
+\subsection{Multi-Step Examples}
+
+In this section, we will tackle some complicated order of operations problems. The key is to underline the next step, and do the problem step by step. As a beginner, don't try to do two steps at once.
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=} \underline{(7-2)}^{2}+3(7-2^{2}) \\
+   &= 5^{2}+3(7-\underline{2^{2}}) &\text{There is no need to write }(5)^{2}\\
+   &= 5^{2}+3\underline{(7-4)} \\
+   &= \underline{5^{2}}+3(3) &\text{We could write }3\cdot3\\
+   &= 25+\underline{3(3)} \\
+   &= 25+9 \\
+   &= 34
+\end{aligned}
+\]
+Once we complete all operations inside a pair of parentheses, the parentheses have done the job, and we can omit them. For example, in the second step of this example, we could write $(5)^{2}$, or $5^{2}$. It's your choice.
+\end{myexample}
+
+When there are parentheses inside parentheses, we use brackets, "[ ]", as the outside parentheses to differentiate those two pairs of parentheses. We need to take care of the inside pair first.
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=}23-2[3^{2}-\underline{(4-3)}] \\
+   &= 23-2[\underline{3^{2}}-1] \\
+   &= 23-2\underline{[9-1]} \\
+   &= 23-\underline{2[8]} &\text{Don't do subtraction first!} \\
+   &= 23-16 \\
+   &= 7
+\end{aligned}
+\]
+
+In the step $23-2[8]$, note that there is no operation symbol between $2$ and $[8]$, which implies multiplication. Multiplication overrides subtraction, so we need to do $2\cdot[8]$ first.
+
+We could re-write $2[8]$ as $2\cdot8$. Since only one number, $8$, remains in the parentheses, we can omit the parentheses. However, we do need to add a multiplication symbol. Otherwise $2[8]$ would become $28$.
+\end{myexample}
+\bigskip
+
+\subsection{Fraction Line}
+\bigskip
+
+Earlier, we learned that the fraction line means division. We will learn how to do order of operations problems involving fraction line.
+
+Compare these two examples:
+
+\begin{myexample}
+\begin{tabular}[t]{c@{\hspace{4cm}}c@{\hspace{2cm}}c}
+&
+ $ \begin{aligned}[t] &\phantom{{}=} 6+\frac{4}{2} \\ &= 6 +2 \\ &= 8 \end{aligned} $ & $ \begin{aligned}[t] &\phantom{{}=} \frac{6+4}{2} \\ &= \frac{10}{2} \\ &= 5 \end{aligned} $ \\
+\end{tabular}
+\end{myexample}
+
+On the left side, we need to do division before addition.
+
+On the right side, we have to do addition before division. We could imagine a pair of "invisible" parentheses in both the numerator and denominator of a fraction, like:
+\[ \frac{6+4}{2}=\frac{(6+4)}{(2)} \]
+
+Let's look at a more complicated example.
+
+\begin{myexample}
+\[
+\begin{aligned}[t]
+   &\phantom{{}=} \frac{28-2(3)}{6^{2}-5^{2}} \\
+   &= \frac{28-2(3)}{36-5^{2}} \\
+   &= \frac{28-2(3)}{36-25} \\
+   &= \frac{28-6}{36-25} \\
+   &= \frac{22}{36-25} \\
+   &= \frac{22}{11} \\
+   &= 2
+\end{aligned}
+\]
+When a fraction line is involved, we evaluate the numerator first, then the denominator, and finally do the division.
+\end{myexample}
+

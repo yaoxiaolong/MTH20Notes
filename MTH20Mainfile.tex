@@ -1,0 +1,324 @@
+% arara: pdflatex
+% !arara: makechapters: {items: [module2]}
+% !arara: makechapters: {items: [module1,module2,module3,module4,module5,module6,module7,module8,module9,module10]}
+% !arara: pdflatex
+% !arara: indent: { overwrite: on, trace: yes, localSettings: on}
+\documentclass[12pt,a4paper,anypage]{report}
+% ================================================================================================
+%
+%		MTH 20 notes
+%       Last edited Sept. 2013
+%       Version 1.0
+%           Carl Yao
+%
+% ================================================================================================
+\usepackage[	textheight=25cm,
+	left=3.65cm,right=1.65cm,
+	top=2.5cm,
+footskip=1.5cm]{geometry}                   % page set up
+\usepackage{parskip}
+\usepackage[sc,hang,font=small]{caption}           % figures/tables captions
+\usepackage{subcaption}
+\usepackage{minitoc}                                % mini-table of contents
+\usepackage{amssymb}                                % mathematical content
+\usepackage{amsmath}                                % mathematical content
+\usepackage[standard,thmmarks,amsmath]{ntheorem}	% needed for theorems, examples- MUST load AFTER amsmath
+\usepackage{enumitem}
+\usepackage{placeins} 					            % enables \FloatBarrier, useful for positioning figures/tables more precisely.
+\usepackage{multicol}                               % multi columns
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{datetime}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{pgfplots}                               % drawing graphs
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.misc}
+%\usepackage{refcheck}                              % useful for checking references
+\usepackage{longtable}                              % tables that run over a page
+\usepackage{fancyhdr}                               % headers and footers
+\usepackage{needspace}                              % needed to keep examples looking good (with \hrule above and below)
+\usepackage[explicit]{titlesec}                     % customize section headings
+%\usepackage{kpfonts}
+\usepackage[charter]{mathdesign}                     % changes font
+\usepackage[expansion=false,kerning=true]{microtype} % better kerning
+\usepackage{adjustbox}
+\usepackage{varioref}
+\usepackage{hyperref}                               % to allow hyper refs in the final pdf document
+\usepackage{cleveref}
+\usepackage{pdflscape}
+\usepackage{forest}
+
+% arrow style
+\tikzset{>=stealth}
+
+% cycle list- truly awesome; see section 4.6.7, pg 129 of pgfplots
+\pgfplotscreateplotcyclelist{pccstylelist}{%
+	color=red,mark=none,<->\\%
+	color=violet,mark=none,<->\\%
+}
+
+% axis settings
+\pgfplotsset{
+	every axis/.append style={width=10cm,
+		axis x line=middle,
+		axis y line=middle,
+		line width=1pt,
+		xlabel={},
+		ylabel={$y$},
+		axis line style={<->},
+		scale only axis,       % otherwise width won't be as intended: http://tex.stackexchange.com/questions/36297/pgfplots-how-can-i-scale-to-text-width
+		cycle list name=pccstylelist,
+	},
+	% framed
+	framed/.style={axis background/.style ={draw=black}},
+	% grid style
+	grid style={gray!50},
+	% line style
+	cmhplot/.style={color=red,thick,mark=none,<->},
+	soldot/.style={color=red,only marks,mark=*},
+	holdot/.style={color=black,fill=white,only marks,mark=*},
+}
+
+% we might want to change the steps as we proceed through 
+% the different topics- for example, in polynomial functions
+% we may want P1, P2, ..., and in rational functions we 
+% might want R1, R2, ..., etc
+% 
+% The following command should ease the process
+\newcommand{\reformatstepslist}[1]{\setlist[steps]{label*=(${#1}_\arabic*$)}}
+
+% enumerate settings
+\setlist{itemsep=0.05em,topsep=-0.1em}
+\setlist[enumerate,1]{label*=\arabic*.}
+\setlist[enumerate,2]{label=(\alph*)}
+
+% newlist: steps
+\newlist{method}{enumerate}{3}
+\setlist[method]{label=Method \arabic*:,font=\bfseries,leftmargin=*}%
+\newlist{steps}{enumerate}{3}
+\setlist[steps]{label=Step \arabic*:,font=\bfseries,leftmargin=*}%
+
+% hyperref settings- it seemed to work better here than
+% as options to the \usepackage call above
+\hypersetup{colorlinks=true,
+	linkcolor=blue
+}
+
+% rename chapter as Module
+\renewcommand{\chaptername}{Module}
+
+% custom chapter
+\titleformat{\chapter}[display]
+{\normalfont\Large\filcenter\bf}
+{\titlerule[1pt]%
+	\vspace{1pt}%
+	\titlerule
+	\vspace{1pc}%
+	\LARGE\MakeUppercase{\chaptertitlename} \thechapter}
+{1pc}
+{\titlerule
+	\vspace{1pc}%
+	\Huge}
+
+% custom section
+\titleformat{\section}
+{\normalfont\Large\bfseries}
+{\llap{\thesection\hskip 9pt}#1}
+{0pt}
+{}
+
+% custom subsection
+\titleformat{\subsection}
+{\normalfont\large\bfseries}
+{\llap{\thesubsection\hskip 9pt}#1}
+{0pt}
+{}
+
+% From the titlesec package
+% \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
+% spacing: how to read {12pt plus 4pt minus 2pt}
+%           12pt is what we would like the spacing to be
+%           plus 4pt means that TeX can stretch it by at most 4pt
+%           minus 2pt means that TeX can shrink it by at most 2pt
+%       This is one example of the concept of, 'glue', in TeX
+\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+% some useful commands for commenting and displaying mathematics respectively
+\newcommand{\com}[1]{\iffalse{#1}\fi}
+\newcommand{\dd}{\displaystyle}
+
+\makeatletter
+\newtheoremstyle{margincmh}%
+{\item[\theorem@headerfont \llap{##1 ##2}]}%
+{\item[\theorem@headerfont \llap{##1 ##2} -- ##3\theorem@separator\hskip\labelsep]}%
+%{\item[\theorem@headerfont \llap{##1 ##2} -- ##3\IfEndWith{##3}{!}{}{\theorem@separator}\hskip\labelsep]}%
+\newtheoremstyle{margincmhsoln}%
+{\item[\theorem@headerfont \llap{##1}]}%
+{\item[\theorem@headerfont \llap{##1} (##3): ]}%
+\makeatother
+
+
+% example
+\theoremstyle{margincmh}
+\theorembodyfont{}
+\theoremsymbol{}
+\theoremprework{\medskip}
+\theorempostwork{}
+\theoremseparator{:}
+\newtheorem{myexample}{Example}[section]
+
+% solution
+\theoremstyle{margincmhsoln}
+\theorembodyfont{}
+%\theorempostwork{\medskip\hrule\needspace{\baselineskip}}
+\theoremprework{\medskip}
+\theoremsymbol{\rlap{$\blacksquare$}}
+\theoremseparator{}
+\newtheorem{solution}{Solution}
+
+% myDefinition
+\pgfdeclarehorizontalshading{exersicebackground}{100bp}
+{color(0bp)=(green!40);
+	color(100bp)=(black!5)}
+
+\newmdenv[
+	outerlinewidth=1pt,
+	innerlinewidth=0pt,
+	roundcorner=10pt,
+	tikzsetting={shading=exersicebackground},
+	innertopmargin=.5cm,
+	%skipabove={\dimexpr0.5\baselineskip+\topskip\relax},
+	%skipabove=0pt,
+	%needspace=3\baselineskip,
+]{myDefinition}
+
+
+% Margin Paragraph
+\reversemarginpar
+\setlength{\marginparwidth}{1.0in}
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]%
+	{\raggedright\footnotesize #1}}
+
+% Define 'Drill and skill' command
+\newcommand{\drillandskill}
+{%
+	\marginpar{\raisebox{-1cm}{\em \color{red} \small Drill and skill!}}%
+}
+
+% Define text reference command
+% 	- it puts a comment in the margin
+%	- it writes to a file with the references you have used
+\newwrite\sectionRefwrite
+\openout\sectionRefwrite sectionRefs.log\relax
+
+\newcommand{\textref}[2]{}%
+%{\marginpar{\em\color{red}\small See \S #1, pg #2}%
+%	\write\sectionRefwrite{Module \thechapter, p \thepage: Section #1, page #2^^J}%
+%}
+
+% Define fix command
+% 	- it puts a comment in the margin
+%	- it writes to a file with a list of things that need fixing
+\newwrite\sortwrite
+\openout\sortwrite fixThis.log\relax
+
+\newcommand{\fixthis}[1]
+{%
+	\marginpar{\huge \color{red} \framebox{FIX}}%
+	\write\sortwrite{p\thepage : #1^^J}%
+}
+
+% tight center- a center environment with no topsep
+\newenvironment{tightcenter}{%
+	\setlength\topsep{0pt}
+	\setlength\parskip{0pt}
+	\begin{center}
+		}{%
+	\end{center}
+}
+
+% standard environments
+\crefname{table}{Table}{Tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{Figure}{Figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{section}{Section}{Sections}
+\Crefname{section}{Section}{Sections}
+\crefname{equation}{Equation}{Equations}
+\Crefname{equation}{Equation}{Equations}
+% custom environments
+\crefname{myexample}{example}{examples}
+\Crefname{myexample}{Example}{Examples}
+
+%% this bit is useful because it helps make modules
+%\ifdefined\myfile
+%\includeonly{\myfile}
+%\else
+%% include everything !
+%\fi
+%\includeonly{module2}
+
+% headers and footers
+\fancyhf{}
+\lhead{\tiny\rightmark}
+\rhead{\tiny\leftmark}
+\rfoot{\thepage}
+\pagestyle{fancy}
+
+%\includeonly{
+%U1L1ExponentAndRoundingWholeNumber,
+%U1L2Multiplication
+%}
+% ================================================================================================
+%
+% 				BEGIN DOCUMENT
+%
+% ================================================================================================
+\begin{document}
+
+% minitoc commands
+\dominitoc
+\faketableofcontents
+
+\include{U1L1ExponentAndRoundingWholeNumber}
+\include{U1L2Multiplication}
+\include{U1L3Division}
+\include{U1L4GeometryBasics}
+\include{U1L5DivisivilityTest}
+\include{U1L6PrimeNumber}
+\include{U1L7GCFAndLCM}
+\include{U1L8OrderOfOperations_1}
+\include{U2L1IntegersAndAbsoluteValue}
+\include{U2L2AddSubtractIntegers}
+\include{U2L3MultiplyDivideIntegers}
+\include{U2L4OrderOfOperations_2}
+\include{U3L1FractionDefinition}
+\include{U3L2AddSubtractFractions}
+\include{U3L3MultiplyFractions}
+\include{U3L4DivideFractions}
+\include{U3L5MixedNumberDefinition}
+\include{U3L6AddSubtractMixedNumbers}
+\include{U3L7MultiplyDivideMixedNumbers}
+\include{U3L8OrderOfOperations_3}
+\include{U4L1DecimalDefinition}
+\include{U4L2DecimalAdditionSubtraction}
+\include{U4L3DecimalMultiplicationDivision}
+\include{U4L4DecimalAndFraction}
+\include{U4L5SquareRoot}
+\include{U4L6MeanMedianMode}
+\include{U5L1RateAndRatio}
+\include{U5L2Proportion}
+\include{U5L3UnitConversion}
+\include{U6L1PercentDefinition}
+\include{U6L2PercentFormula}
+\include{U6L3PercentWordProblem}
+\include{U6L4PercentOfIncreaseDecrease}
+
+% then close the 'fixthis' and 'sectionRef' files
+\closeout\sortwrite
+\closeout\sectionRefwrite
+
+\end{document}

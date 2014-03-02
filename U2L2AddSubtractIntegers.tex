@@ -1,0 +1,243 @@
+
+\section{Add and Subtract Integers}
+
+In this lesson, we will learn how to add and subtract positive and negative integers.
+
+\subsection{Add Integers}
+I will show two methods to add integers. You choose the method which makes 
+more sense for you. We will calculate $(-1)+(-2)$.
+\begin{method}
+	\item The first method is the traditional number line method. Recall that the 
+right side is the positive direction, and the left side is negative direction.
+	\begin{steps}
+		\item Locate the first number, $-1$, on the number line.
+		\begin{tightcenter}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-5,xmax=5,
+						ymin=-1,ymax=2,
+						axis y line=none,
+						height =1cm,
+						grid=none,
+						xtick={-4,-3,...,4},
+						xlabel={}
+					]
+					\addplot+[soldot]coordinates{ (-1,0) };				
+				\end{axis}
+			\end{tikzpicture}
+			\captionof{figure}{Locate $-1$ on the number line}
+		\end{tightcenter}
+		\item The second number is $-2$, meaning we will move to the \emph{left} (negative direction) by two units.
+		\begin{tightcenter}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-5,xmax=5,
+						ymin=-1,ymax=2,
+						axis y line=none,
+						height =1cm,
+						grid=none,
+						xtick={-4,-3,...,4},
+						xlabel={}
+					]
+					\addplot[soldot]coordinates{ (-1,0) };	
+					\addplot[<-,line width=3pt,red,domain=-3:-1]{0.5} node[pos=0.5,anchor=south]{$-2$};			
+				\end{axis}
+			\end{tikzpicture}
+			\captionof{figure}{From $-1$ move to the left by $2$ units}
+		\end{tightcenter}
+		\item After the move, we reached the number $-3$ on the number line. This implies that
+		\[
+			(-1)+(-2)=-3
+		\]
+	\end{steps}
+	\item The second method uses a money model. We deal with money every day, so most students easily understand this method.
+	
+	\begin{steps}
+	\item Say you are gambling. The first number is $-1$, meaning you lost \$1 in the first game. 
+	\item The second number is $-2$, meaning you lost \$2 in the second game. 
+	\item Since you lost in both games, altogether, you lost. This implies the answer must be negative.
+	\item Since you lost in both games, all together, you lost \$1+\$2=\$3.
+	\end{steps}
+	Finally, we have \[(-1)+(-2)=-3\]
+\end{method}
+
+Let's look at a few more examples.
+
+\begin{myexample}
+Calculate $4+(-5)$
+\end{myexample}
+\begin{solution}
+	We will use the number line method.
+	\begin{steps}
+		\item Locate the first number, $4$, on the number line.
+		\begin{tightcenter}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-5,xmax=5,
+						ymin=-1,ymax=1,
+						axis y line=none,
+						height =1cm,
+						grid=none,
+						xtick={-4,-3,...,4},
+						xlabel={}
+					]
+					\addplot+[soldot]coordinates{ (4,0) };				
+				\end{axis}
+			\end{tikzpicture}
+			\captionof{figure}{Locate $4$ on the number line}
+		\end{tightcenter}
+		\item The second number is $-5$, meaning we will move to the \emph{left} (negative direction) by five units.
+		\begin{tightcenter}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-5,xmax=5,
+						ymin=-1,ymax=2,
+						axis y line=none,
+						height =1cm,
+						grid=none,
+						xtick={-4,-3,...,4},
+						xlabel={}
+					]
+					\addplot[<-,line width=3pt,red,domain=-1:4]{0.5} node[pos=0.5,anchor=south]{$-5$};	
+					\addplot[soldot]coordinates{ (4,0) };		
+				\end{axis}
+			\end{tikzpicture}
+			\captionof{figure}{From $4$ move to the left by $5$ units}
+		\end{tightcenter}
+		\item After the move, we reached the number $-1$ on the number line. This implies:
+		\[
+			4+(-5)=-1
+		\]
+	\end{steps}
+\end{solution}
+
+\begin{myexample}
+Calculate $(-4)+5$
+\label{ex:e-4+5}
+\end{myexample}
+\begin{solution}
+We will use the money model to solve this problem.
+	\begin{steps}
+	\item Say you are gambling. The first number is $-4$, meaning you lost \$4 in the first game. 
+	\item The second number is $5$, meaning you won \$5 in the second game. 
+	\item Since you won more money than you lost, altogether, you won. This implies the answer must be positive.
+	\item Since you lost some and then won some, we should find the difference of those two numbers' absolute values: \$$5-$\$$4$=\$$1$.
+	\end{steps}
+	Finally, we have \[(-4)+5=1\]
+\end{solution}
+
+If you are new to negative numbers, the number line method can help you understand integer operations. When numbers are big, it's difficult to locate numbers on the number line; the money model would work better.
+
+\begin{myexample}
+Calculate $(-44)+15$
+\end{myexample}
+\begin{solution}
+We will use the money model to solve this problem.
+	\begin{steps}
+	\item Say you are gambling. The first number is $-44$, meaning you lost \$44 in the first game. 
+	\item The second number is $15$, meaning you won \$15 in the second game. 
+	\item Since you lost more money than you won, altogether, you lost. This implies the answer must be negative.
+	\item Since you lost some and then won some, we should find the difference of those two numbers' absolute values: \$$44-$\$$15$=\$$29$.
+	\end{steps}
+	Finally, we have \[(-44)+15=-29\]
+	Don't forget the negative sign in the answer (because you lost money).
+\end{solution}
+
+\subsection{Subtract a Positive Integer}
+Let's observe a pattern first:
+\begin{align*}
+	&3-2 = 1 \longleftrightarrow 3+(-2) =1 \\
+	&4-3 =1  \longleftrightarrow 4+(-3) =1 \\
+	&1-3 =-2  \longleftrightarrow 1+(-3) =-2 
+\end{align*}
+
+We can see the subtraction sign and negative symbol have the same functions! Starting today, it would be great if you can treat the subtraction sign as a negative symbol. When we subtract a positive number, we can treat it as "adding a negative number", and then use the methods we learned earlier to add integers.
+
+\begin{myexample}
+Calculate $-4-5$
+\end{myexample}
+\begin{solution}
+First, we change subtraction to "adding a negative":
+\[ -4-5=(-4)+(-5) \]
+Note that the parentheses around $-4$ is optional, just to make it clear. The parentheses around $-5$ is needed, as it's confusing to write two symbols right next to each other, like $-4+-5$.
+Next, we will use the money model to solve this problem.
+	\begin{steps}
+	\item Say you are gambling. The first number is $-4$, meaning you lost \$4 in the first game. 
+	\item The second number is $-5$, meaning you lost \$5 in the second game. 
+	\item Since you lost money in both games, altogether, you lost. This implies the answer must be negative.
+	\item Since you lost in both games, we should find the sum of those two numbers' absolute values: \$$5+$\$$4$=\$$9$.
+	\end{steps}
+	Finally, we have \[-4-5=(-4)+(-5)=-9\]
+\end{solution}
+
+\begin{myexample}
+Calculate $4-5$
+\end{myexample}
+\begin{solution}
+First, we change subtraction to "adding a negative":
+\[ 4-5=4+(-5) \]
+Next, we will use the money model to solve this problem.
+	\begin{steps}
+	\item Say you are gambling. The first number is $4$, meaning you won \$4 in the first game. 
+	\item The second number is $-5$, meaning you lost \$5 in the second game. 
+	\item Since you lost more money than you won, altogether, you lost. This implies the answer must be negative.
+	\item Since you won some money and then lost some, we should find the difference of those two numbers' absolute values: \$$5-$\$$4$=\$$1$.
+	\end{steps}
+	Finally, we have \[4-5=4+(-5)=-1\]
+\end{solution}
+
+Don't be silly when you do problems like $9-5$. There is no need to use the number line or money model, as $9-5=4$. :)
+
+\subsection{Subtract a Negative Integer}
+Here is the bottom line: When two negative signs are right next to each other, we change these two negative signs to one positive sign, as in
+\[ 1-(-2)=1+2 \]
+
+For now, memorize this as a rule. In the next lesson, we will understand why.
+
+Look at the difference between these two problems:
+\[
+\begin{aligned}[t]
+   &\phantom{{}=}1-(-2) &\phantom{aaaaaaaaaaaaaaaaaaa}& \phantom{{}=}-1-2 \\
+   &=1+2 &\phantom{aaaaaaaaaaaaaaaaaaa} & =-3 \\
+   &=3
+\end{aligned}
+\]
+
+We only change two negative signs to one positive sign if they are right next to each other. In $-1-2$, a number separated those two negative signs, so we cannot change them to one positive sign.
+
+\begin{myexample}
+Calculate $-4-(-5)$
+\end{myexample}
+\begin{solution}
+	First, we change two negative signs to one positive sign:
+	\[ -4-(-5)=-4+5 \]
+	The rest of the solution is the same as in \cref{ex:e-4+5}.
+	Finally, we have \[-4-(-5)=-4+5=1\]
+\end{solution}
+
+Finally, let's look at an example to put together what we learned in this lesson.
+
+\begin{myexample}
+Calculate $-3-(-5)-(-9)-14$
+\begin{solution}
+	The first step is to change two negative signs (right next to each other) to one positive sign:
+		\[
+		\begin{aligned}[t]
+			&\phantom{{}=} -3-(-5)-(-9)-14 \\
+			& = -3+5+9-14 \\
+		\end{aligned}
+		\]
+	Next, we use either the number line model or money model to do additions and subtractions step by step. The full solution is:
+		\[
+		\begin{aligned}[t]
+			&\phantom{{}=} -3-(-5)-(-9)-14 \\
+			& = -3+5+9-14 \\
+            & = 2+9-14     \\
+            & = 11-14 \\
+            &= -3
+		\end{aligned}
+		\]
+\end{solution}
+\end{myexample}
+
+

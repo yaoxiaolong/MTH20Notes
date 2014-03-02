@@ -1,0 +1,119 @@
+
+\section{Prime Number}
+
+Prime numbers are the backbone of all numbers. In this lesson, we will learn prime numbers and how to prime factor a number.
+
+\subsection{Factor and Prime}
+Since $\frac{8}{2}=4$, we say $2$ is a factor of $8$, because $2$ goes into $8$ four times with no remainder.
+
+Let's look at factors of the first few numbers, starting with $2$:
+\begin{itemize}
+\item $2$ has two factors: $1$ and $2$.
+\item $3$ has two factors: $1$ and $3$.
+\item $4$ has three factors: $1,2$ and $4$.
+\item $5$ has two factors: $1$ and $5$.
+\item $6$ has four factors: $1,2,3$ and $6$.
+...
+\end{itemize}
+We can see a number (except $1$) has at least two factors: $1$ and the number itself.
+
+If a number has only two factors, $1$ and the number itself, this number is a \textit{prime number}. For example, $2$, $3$ and $5$ are prime numbers.
+
+If a number has more than two factors, this number is a \textit{composite number}. For example, $4$ and $6$ are composite numbers.
+
+If a number is an even number bigger than $2$, it has at least $3$ factors: $1$, $2$ and itself. All even numbers, except $2$, are composite numbers.
+
+It's useful to memorize the first few prime numbers, which will be used frequently later: $2,3,5,7,11,13,...$
+
+Note that $1$ is neither a prime number nor a composite number.
+
+\begin{myexample}
+Is $245$ prime or composite?
+\end{myexample}
+\begin{solution}
+When we judge whether a number is prime or composite, we look at the first few prime numbers, $2,3,5,7,11,13,...$, and see whether any of them goes into the number evenly.
+
+\begin{itemize}
+\item $2$ doesn't go into $245$ evenly, because $245$ is odd.
+\item $3$ doesn't go into $245$ evenly, because $3$ doesn't go evenly into $2+4+5=11$.
+\item $5$ goes into $245$ evenly, because the last digit of $245$ is $5$.
+\end{itemize}
+We can tell $245$ is composite because $5$ goes into $245$ evenly, implying $245$ has at least $3$ factors: $1$, $5$ and $245$.
+\end{solution}
+
+\begin{myexample}
+Is $199$ prime or composite?
+\end{myexample}
+\begin{solution}
+When we judge whether a number is prime or composite, we look at the first few prime numbers, $2,3,5,7,11,13,...$, and see whether any of them goes into the number evenly.
+
+\begin{itemize}
+\item $2$ doesn't go into $199$ evenly, because $199$ is odd.
+\item $3$ doesn't go into $199$ evenly, because $3$ doesn't go evenly into $1+9+9=19$.
+\item $5$ doesn't go into $199$ evenly, because the last digit of $199$ is not $0$ or $5$.
+\item To judge whether $7$ goes into $199$ evenly, it's reasonable to use a calculator. We can see $\frac{199}{7}=28.42\hdots$, so $7$ doesn't go into $199$ evenly.
+\item With the help of calculator, we can tell neither $11$ nor $13$ goes into $199$ evenly. 
+\end{itemize}
+
+Theoretically, we must test all prime numbers smaller than $199$: $17,19,23,...$. In reality, no reasonable instructor would ask you to spend so much time to judge whether a number if prime or composite. After you test $2,3,5,7$ and $11$, and if none of them goes into the number evenly, it's reasonable to say the number is prime.
+
+For this example, $199$ is indeed a prime number.
+\end{solution}
+
+\subsection{Prime Factoring}
+Prime numbers are backbones of numbers. Each composite number can be written as the product of prime numbers. For example, $15=3\cdot5$ and $12=2\cdot2\cdot3$. The last equation can be re-written in a simpler way as $12=2^{2}\cdot3$. We will learn how to prime factor numbers.
+
+\begin{myexample}
+Prime factor $12$.
+\end{myexample}
+\begin{solution}
+First, write down the first few prime numbers: $2,3,5,7,11$. Rarely would an instructor expect you to use bigger prime numbers in prime factoring. We will prime factor $12$ as an example.
+
+To prime factor the number $12$, we look at the first prime number, $2$, and see whether $2$ goes into $12$. It does! We have $12=2\cdot6$.
+
+In $2\cdot6$, the number $2$ is prime, and we cannot further break it down; the number $6$ is not prime, and can be further factored.
+
+Again, we go back to the list of prime numbers, and see whether the first prime number $2$ goes into $6$. It does! Now we have $12=2\cdot6=2\cdot2\cdot3$. We can stop here because all numbers in the product $2\cdot2\cdot3$ are prime numbers.
+
+We can re-write the product with exponent: $12=2^{2}\cdot3$.
+
+It's easier to use a tree to prime factor numbers:
+\[
+\begin{forest}
+   [12
+      [2]
+      [6
+         [2]
+         [3]
+      ]
+   ]
+\end{forest}
+\]
+\end{solution}
+
+Note that we don't use the number $1$ in prime factoring. Otherwise, we could keep going with no end like $12=2^{2}\cdot3\cdot1\cdot1\cdot...$.
+
+\begin{myexample}
+Prime factor 250.
+\end{myexample}
+\begin{solution}
+We will use a factor tree to solve this problem.
+\[
+\begin{forest}
+   [250
+      [2]
+      [125
+         [5]
+         [25
+            [5]
+            [5]
+         ]
+      ]
+   ]
+\end{forest}
+\]
+The prime factor of $250$ is $250=2\cdot5^{3}$.
+\end{solution}
+
+We can see a big number like $250$ can be broken down to the product of very small prime numbers.
+

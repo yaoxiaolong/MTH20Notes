@@ -1,0 +1,185 @@
+\section{Greatest Common Factor and Least Common Multiple}
+
+In this lesson, we learn how to find the GCF (Greatest Common Factor) and LCM (Least Common Multiple) of a group of numbers (usually two numbers).
+
+For example, the GCF of $6$ and $8$ is $2$. The LCM of $6$ and $8$ is $24$. These two concepts will help you better understand numbers. In later lessons, we need to find LCM of denominators when we add or subtract fractions.
+
+\subsection{GCF (Greatest Common Factor)}
+We will find the GCF of $12$ and $18$. We will list both numbers' factors:
+
+\begin{itemize}
+\item Factors of $12$ are: $1,2,3,4,6,12$.
+\item Factors of $18$ are: $1,2,3,6,9,18$.
+\end{itemize}
+
+The \textit{common} factors of $12$ and $18$ are: $1,2,3,6$.
+
+The GCF (Greatest Common Factor) of $12$ and $18$ is $6$.
+
+Note that we listed all factors of $12$ and $18$ in order to find their GCF. There is an easier method. We will prime factor both numbers:
+\[
+\begin{tabular}{ l c r }
+  \begin{forest} [12[2][6[2][3]]]\end{forest} &  & \begin{forest} [18[2][9[3][3]]]\end{forest} \\
+\end{tabular}
+\]
+We have:
+\[
+\begin{aligned}[t]
+&12=2\cdot2\cdot3 \\
+&18=2\cdot3\cdot3
+\end{aligned}
+\]
+
+Since $12$ and $18$ share the following factors, one $2$ and one $3$, the GCF of $12$ and $18$ is $2\cdot3=6$.
+
+Let's look at another example.
+
+\begin{myexample}
+Find the GCF of $24$ and $36$.
+\end{myexample}
+\begin{solution}
+We will prime factor both $24$ and $36$:
+\[
+\begin{tabular}{ l c r }
+  \begin{forest} [24[2][12[2][6[2][3]]]]\end{forest} &  & \begin{forest} [36[2][18[2][9[3][3]]]]\end{forest} \\
+\end{tabular}
+\]
+We have:
+\[
+\begin{aligned}[t]
+&24=2\cdot2\cdot2\cdot3 \\
+&36=2\cdot2\cdot3\cdot3
+\end{aligned}
+\]
+We can see $24$ and $36$ share the following factors, two $2$'s and one $3$, so the GCF of $24$ and $36$ is $2\cdot2\cdot3=12$.
+\end{solution}
+
+\begin{myexample}
+Find the GCF of $8$ and $15$.
+\end{myexample}
+\begin{solution}
+Prime factor both numbers, we have:
+\[
+\begin{aligned}[t]
+&8=2\cdot2\cdot2 \\
+&15=3\cdot5
+\end{aligned}
+\]
+We can see $8$ and $15$ don't share any factors. The GCF of $8$ and $15$ is $1$, because $1$ is a factor of all natural numbers.
+\end{solution}
+
+\begin{myexample}
+Find the GCF of $5$ and $7$.
+\end{myexample}
+\begin{solution}
+Both $5$ and $7$ are prime numbers, so it's impossible for them to share any factor except $1$. So $1$ is the GCF of $5$ and $7$.
+\end{solution}
+
+\begin{myexample}
+Find the GCF of $10$ and $20$.
+\end{myexample}
+\begin{solution}
+Since $10$ goes into $20$ evenly, the GCF of $10$ and $20$ is simply $10$, because $10$ goes into both $10$ and $20$ evenly.
+\end{solution}
+
+\subsection{LCM (Least Common Multiple)}
+We will find the LCM of $6$ and $8$. First, we will find the first few multiples of $6$ and $8$:
+\begin{itemize}
+\item The first few multiples of $6$ are: $6,12,18,24,30,36,42,48,54,...$.
+\item The first few multiples of $8$ are: $8,16,24,32,40,48,56...$.
+\end{itemize}
+
+We can see $6$ and $8$ have some \textit{common} multiples: $24,48,...$. The \textit{least} common multiple is $24$.
+
+Later, when we do $\frac{1}{6}+\frac{1}{8}$, we need to change the denominator of both fractions to $24$, the LCM of $6$ and $8$. We will learn details later, but here is the solution:
+\[
+\begin{aligned}[t]
+   &\phantom{{}=}\frac{1}{6}+\frac{1}{8} \\
+   &= \frac{1\cdot4}{6\cdot4}+\frac{1\cdot3}{8\cdot3} \\
+   &= \frac{4}{24}+\frac{3}{24} \\
+   &= \frac{4+3}{24} \\
+   &= \frac{7}{24}
+\end{aligned}
+\]
+
+As an example, we will find the LCM of $6$ and $8$ in two methods.
+\subsubsection{Method 1 to Find LCM}
+We will prime factor both $6$ and $8$:
+\[
+\begin{aligned}[t]
+&6=2\cdot3 \\
+&8=2\cdot2\cdot2
+\end{aligned}
+\]
+
+The LCM of $6$ and $8$ must \textit{cover} the prime factors of both numbers:
+\begin{itemize}
+\item The LCM of $6$ and $8$ must have three $2$'s as factors, as $6$ needs one $2$ and $8$ needs three $2$'s.
+\item The LCM of $6$ and $8$ must have one $3$ as a factor, as $6$ needs one $3$.
+\end{itemize}
+Putting them together, the LCM must have three $2$'s and one $3$ as factors. We have: $\text{LCM}=2\cdot2\cdot2\cdot3=24$.
+
+To verify, we have $\frac{24}{6}=4$, and $\frac{24}{8}=3$.
+
+\subsubsection{Method 2 to Find LCM}
+List the first few multiples of the \textit{bigger} number until the smaller number goes into a multiple evenly:
+
+The first few multiples of $8$ are: $8,16,24$.
+
+We stopped here because $6$ goes into $24$ evenly, so $24$ is the LCM of $6$ and $8$. To verify, we have $\frac{24}{6}=4$, and $\frac{24}{8}=3$.
+
+Which method should we use? Most of the time, the second method is faster, so try the second method first. Sometimes the first method is faster.
+
+\begin{myexample}
+Find the LCM of $4$ and $12$.
+\end{myexample}
+\begin{solution}
+Since $4$ goes into $12$, the LCM of $4$ and $12$ is simply $12$.
+
+To verify, we have $\frac{12}{4}=3$ and $\frac{12}{12}=1$.
+\end{solution}
+
+\begin{myexample}
+Find the LCM of $8$ and $18$.
+\end{myexample}
+\begin{solution}
+We list the first few multiples of $18$, until $8$ goes evenly into one of them:
+
+Multiples of $18$: $18$,$36$,$54$,$72$.
+
+We stop here because $\frac{72}{8}=9$. The LCM of $8$ and $18$ is $72$.
+
+To verify, we have $\frac{72}{8}=9$ and $\frac{72}{18}=4$.
+\end{solution}
+
+\begin{myexample}
+Find the LCM of $24$ and $28$.
+\end{myexample}
+\begin{solution}
+We list the first few multiples of $28$, until $24$ goes evenly into one of them:
+
+Multiples of $28$: $28$,$56$,$84$,$112$,$140$...
+
+$24$ doesn't go evenly into any of them. After listing $5$ multiples, we know this method is not the best method to find the LCM. We will try the other method. We will prime factor both numbers:
+\[
+\begin{tabular}{ l c r }
+  \begin{forest} [28[2][14[2][7]]]\end{forest} &  & \begin{forest} [24[2][12[2][6[2][3]]]]\end{forest} \\
+\end{tabular}
+\]
+We have:
+\[
+\begin{aligned}[t]
+&28=2\cdot2\cdot7 \\
+&24=2\cdot2\cdot2\cdot3
+\end{aligned}
+\]
+The LCM of $28$ and $24$ must \textit{cover} the prime factors of both numbers:
+\begin{itemize}
+\item The LCM must have three $2$'s as factors, as $24$ needs three $2$'s and $28$ needs two $2$'s.
+\item The LCM must have one $3$ as a factor, as $24$ needs one $3$.
+\item The LCM must have one $7$ as a factor, as $28$ needs one $7$.
+\end{itemize}
+Putting them together, the LCM must have three $2$'s, one $3$ and one $7$ as factors. We have: $\text{LCM}=2\cdot2\cdot2\cdot3\cdot7=168$.
+
+To verify, we have $\frac{168}{28}=6$, and $\frac{168}{24}=7$.
+\end{solution}

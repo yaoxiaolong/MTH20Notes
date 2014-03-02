@@ -1,0 +1,211 @@
+
+\section{Multiply and Divide Integers}
+\thispagestyle{fancy}
+In this lesson, we will learn how to multiply and divide positive and negative integers.
+
+\subsection{Multiply Integers}
+Assume you are walking on a number line. Remember a number line has a positive direction and a negative direction. Assume you are facing the positive direction.
+
+If you walk backward at a speed of $2$ feet per step, you would walk in the negative direction. We can say you walk $-2$ feet per step.
+
+In $3$ steps, you would walk $6$ feet in the negative direction. We could do
+
+\[ (-2)+(-2)+(-2)=-6 \]
+
+Easier, we can use multiplication:
+
+\[ (-2)\cdot3=-6 \]
+
+We can see this in the figure:
+
+		\begin{tightcenter}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-8,xmax=8,
+						ymin=-1,ymax=2,
+						axis y line=none,
+						height =1cm,
+						grid=none,
+						xtick={-7,-6,...,7},
+						xlabel={}
+					]
+					\addplot[<-,line width=3pt,red,domain=-2:0]{0.5} node[pos=0.5,anchor=south]{$-2$};
+					\addplot[<-,line width=3pt,red,domain=-4:-2]{0.5} node[pos=0.5,anchor=south]{$-2$};
+					\addplot[<-,line width=3pt,red,domain=-6:-4]{0.5} node[pos=0.5,anchor=south]{$-2$};	
+					\addplot[soldot]coordinates{ (0,0) };			
+					\addplot[soldot]coordinates{ (-2,0) };
+					\addplot[soldot]coordinates{ (-4,0) };
+					\addplot[soldot]coordinates{ (-6,0) };
+				\end{axis}
+			\end{tikzpicture}
+			\captionof{figure}{$(-2)\cdot3=-6$}
+		\end{tightcenter}
+
+We can see:
+\[ \text{(negative)}\cdot\text{(positive)}=\text{negative} \]
+
+The next rule is:
+\[ \text{(negative)}\cdot\text{(negative)}=\text{positive} \]
+
+There are two ways to understand this.
+
+An easy way is to think about this sentence: I do NOT NOT like football. Since double-negation implies affirmation, this sentence actually means "I do like football." This is why $ \text{(negative)}\cdot\text{(negative)}=\text{positive} $.
+
+Another way is to use the number line. In $(-2)\cdot(-3)$, the number $-2$ implies a person walks \textit{backward} $2$ feet per step; the number $-3$ implies this person walks $3$ steps while \textit{facing the negative direction}. In this situation, since the person faces the negative direction while walking backward, the person is actually moving \textit{in the positive direction}! See the following figure:
+
+		\begin{tightcenter}
+			\begin{tikzpicture}
+				\begin{axis}[
+						xmin=-8,xmax=8,
+						ymin=-1,ymax=2,
+						axis y line=none,
+						height =1cm,
+						grid=none,
+						xtick={-7,-6,...,7},
+						xlabel={}
+					]
+					\addplot[->,line width=3pt,red,domain=0:2]{0.5} node[pos=0.5,anchor=south]{$2$};
+					\addplot[->,line width=3pt,red,domain=2:4]{0.5} node[pos=0.5,anchor=south]{$2$};
+					\addplot[->,line width=3pt,red,domain=4:6]{0.5} node[pos=0.5,anchor=south]{$2$};	
+					\addplot[soldot]coordinates{ (0,0) };			
+					\addplot[soldot]coordinates{ (2,0) };
+					\addplot[soldot]coordinates{ (4,0) };
+					\addplot[soldot]coordinates{ (6,0) };
+				\end{axis}
+			\end{tikzpicture}
+			\captionof{figure}{$(-2)\cdot(-3)=6$}
+		\end{tightcenter}
+
+Let's summarize multiplication rules:
+\[
+\begin{aligned}[t]
+	&\text{(positive)}\cdot\text{(positive)}=\text{positive}&&\text{example}: 2\cdot3=6\\
+	&\text{(negative)}\cdot\text{(positive)}=\text{negative}&&\text{example}: (-2)\cdot3=-6\\
+	&\text{(positive)}\cdot\text{(negative)}=\text{negative}&&\text{example}: 2\cdot(-3)=-6\\
+	&\text{(negative)}\cdot\text{(negative)}=\text{positive}&&\text{example}: (-2)\cdot(-3)=6\\
+\end{aligned}
+\]
+
+\begin{myexample}
+Calculate $(-1)(-2)(-3)$
+\end{myexample}
+\begin{solution}
+We learned that, in multiplication, $\text{(negative)}\cdot\text{(negative)}=\text{positive}$. In other words, each pair of negative signs cancel each other.
+
+In this problem, there are three negative signs. After one pair cancel each other, there is still one left, making the product negative. We have:
+	\[ (-1)(-2)(-3)=-1\cdot2\cdot3 \]
+After finding the product is negative, the problem is easier. Since $1\cdot2\cdot3=6$, we have:
+	\[ (-1)(-2)(-3)=-1\cdot2\cdot3 = -6 \]
+\end{solution}
+
+\begin{myexample}
+Calculate $(-1)(-2)(-3)(-4)$
+\end{myexample}
+\begin{solution}
+In this problem, there are four negative signs. After two pairs of negative signs cancel each other, no negative signs are left, making the product positive. We have:
+	\[ (-1)(-2)(-3)(-4)=1\cdot2\cdot3\cdot4 \]
+After finding the product is positive, the problem is easier:
+	\[ (-1)(-2)(-3)(-4)=1\cdot2\cdot3\cdot4 = 24 \]
+\end{solution}
+
+\subsection{Divide Integers}
+Division rules are the same as multiplication rules:
+\[
+\begin{aligned}[t]
+	&\frac{\text{(positive)}}{\text{(positive)}}=\text{positive}&&\text{example}: \frac{6}{2}=3\\
+	&\frac{\text{(negative)}}{\text{(positive)}}=\text{negative}&&\text{example}: \frac{-6}{2}=-3\\
+	&\frac{\text{(positive)}}{\text{(negative)}}=\text{negative}&&\text{example}: \frac{6}{-2}=-3\\
+	&\frac{\text{(negative)}}{\text{(negative)}}=\text{positive}&&\text{example}: \frac{-6}{-2}=3\\
+\end{aligned}
+\]
+
+\subsection{Exponent of Negative Numbers}
+Let's find a pattern:
+\[
+\begin{aligned}[t]
+	&(-2)^{1}=-2 \\
+	&(-2)^{2}=(-2)(-2)=4 \\
+	&(-2)^{3}=(-2)(-2)(-2)=-8 \\
+	&(-2)^{4}=(-2)(-2)(-2)(-2)=16 \\
+	&(-2)^{5}=(-2)(-2)(-2)(-2)(-2)=-32 \\
+	&...
+\end{aligned}
+\]
+If we raise a negative number to an odd exponent, the product is negative; if we raise a negative number to an even exponent, the product is positive. This is because each pair of negative signs cancel each other. So we have:
+\[
+\begin{aligned}[t]
+	&(-1)^{100}=1 \\
+	&(-1)^{99}=-1 \\
+\end{aligned}
+\]
+We need to learn an important difference:
+\[
+\begin{aligned}[t]
+	&-3^{2}=-9 \\
+	&(-3)^{2}=9 \\
+\end{aligned}
+\]
+To explain the difference, we need to find a pattern first:
+\[
+\begin{aligned}[t]
+	&-2=-1\cdot2 \\
+	&-3=-1\cdot3 \\
+	&-4=-1\cdot4 \\
+	&-5=-1\cdot5 \\
+	&...
+\end{aligned}
+\]
+We can see one way to understand the negative sign is "$(-1)$ times", so we can re-write $-3^{2}$ as $(-1)\cdot3^{2}$.
+
+Next, by the order of operations, PEMDAS, exponent overrides multiplication, so we need to handle exponent first: $(-1)\cdot3^{2}=(-1)\cdot9$.
+
+The full solution is:
+\[
+\begin{aligned}[t]
+	&\phantom{{}=}-3^{2} \\
+	&=(-1)\cdot3^{2} \\
+	&=(-1)\cdot9 \\
+	&=-9
+\end{aligned}
+\]
+
+Next, let's look at $(-3)^{2}$. In this problem, by PEMDAS, parentheses override exponent, so we cannot do $3^{2}$ first as we did in $-3^{2}$. Instead, we do:
+\[
+\begin{aligned}[t]
+	&\phantom{{}=}(-3)^{2} \\
+	&=(-3)\cdot(-3) \\
+	&=9
+\end{aligned}
+\]
+
+In summary, we have:
+\[
+\begin{aligned}[t]
+	&-3^{2}=-9 \\
+	&(-3)^{2}=9 \\
+\end{aligned}
+\]
+This is decided by the order of operations.
+
+However, don't try to memorize rules. Instead, understand the reasoning. Rules change when situations change. See the next example.
+
+\begin{myexample}
+Evaluate the following:
+\[
+\begin{aligned}[t]
+	&-2^{3} \\
+	&(-2)^{3} \\
+\end{aligned}
+\]
+\end{myexample}
+\begin{solution}
+\[
+\begin{aligned}[t]
+	&-2^{3}=-2\cdot2\cdot2=-8 \\
+	&(-2)^{3}=(-2)(-2)(-2)=-2\cdot2\cdot2=-8 \\
+\end{aligned}
+\]
+\end{solution}
+When a negative number is raised to an odd exponent, the result is always negative, with or without parentheses. Again, I don't want you to memorize one more rule. Instead, try to understand the math behind it.
+
+
